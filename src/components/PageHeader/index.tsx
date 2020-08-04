@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import logoImg from '../../assets/images/logo.svg'
 import backIcon from '../../assets/images/icons/back.svg'
 
-interface PageHeaderProps{
+import './styles.css'
+
+interface PageHeaderProps {
     title: string
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ title, children }) => {
     return (
         <header className="page-header">
             <div className="top-bar-container">
@@ -19,6 +21,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
 
             <div className="header-content">
                 <strong>{title}</strong>
+                {children}
             </div>
         </header>
     )
