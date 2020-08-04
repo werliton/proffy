@@ -6,8 +6,9 @@ import studyIcon from '../../assets/images/icons/study.svg'
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
-export default function index() {
+export default function Landing() {
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">
@@ -19,19 +20,22 @@ export default function index() {
                 <img src={landingImg} alt="" className="hero-image" />
 
                 <div className="buttons-container">
-                    <a href="" className="study">
-                        <img src={studyIcon} alt="Estudar"/>
+                    <Link className="study"
+                        to="/study"
+                    >
+                        <img src={studyIcon} alt="Estudar" />
                         Estudar
-                    </a>
-
-                    <a href="" className="give-classes">
-                        <img src={giveClassesIcon} alt="Dar aula"/>
+                    </Link>
+                    <Link className="give-classes"
+                        to="/give-classes"
+                    >
+                        <img src={giveClassesIcon} alt="Dar aula" />
                         Dar aula
-                    </a>
+                    </Link>
                 </div>
 
                 <span className="total-connections">
-                    Total de 200 conexoes realizadas <img src={purpleHeartIcon} alt="Coração roxo"/>
+                    Total de 200 conexoes realizadas <img src={purpleHeartIcon} alt="Coração roxo" />
                 </span>
             </div>
         </div>
