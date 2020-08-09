@@ -8,6 +8,8 @@ const classesController = new ClassesControler()
 routes.get('/classes', classesController.index)
 routes.post('/classes', classesController.create)
 
+routes.post('/connections', classesController.create)
+
 
 
 export default routes

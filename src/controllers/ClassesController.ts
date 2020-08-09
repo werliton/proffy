@@ -29,9 +29,9 @@ export default class ClassesControler{
         const classes = await db('classes')
             .whereExists(function() {
                 this.select('class_schedule.*')
-                .from('class_schudule')
-                .whereRaw('`class_schedule`.`class_id` = `classes`. ` id`')
-                .whereRaw('`class_schedule`.`weekday` = ??', [week_day])
+                .from('class_schedule')
+                .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
+                .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
                 
             })
             .where('classes.subject', '=', subject)
