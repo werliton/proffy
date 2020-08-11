@@ -2,6 +2,7 @@ import React from 'react'
 
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 import './styles.css'
+import Button from '../Button';
 
 export default function TeacherItem() {
     return (
@@ -22,10 +23,9 @@ export default function TeacherItem() {
                         Preço/hora
                             <strong>R$ 150,00</strong>
                     </p>
-                    <button type="button">
+                    <Button title="Entrar em contato">
                         <img src={whatsappIcon} alt="whatsapp" />
-                            Entrar em contato
-                        </button>
+                    </Button>
                 </footer>
             </article>
         </main>

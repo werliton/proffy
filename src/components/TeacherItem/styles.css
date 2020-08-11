@@ -57,25 +57,6 @@
     display: block;
 }
 
-.teacher-item footer button{
-    width: 20rem;
-    height: 5.6rem;
-    background: var(--color-secundary);
-    color: var(--color-button-text);
-    border: 0;
-    border-radius: 0.8rem;
-    cursor: pointer;
-    font: 700 1.4rem Archivo;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    
-}
-
-.teacher-item footer button:hover {
-    background: var(--color-secundary-dark);
-}
-
 
 @media(min-width: 700px){
 
@@ -91,15 +72,5 @@
     .teacher-item footer p strong{
         display: initial;
         margin-left: 1.6rem;
-    }
-
-    .teacher-item footer button{
-        width: 24.5rem;
-        font-size: 1.6rem;
-        justify-content: center;   
-    }
-
-    .teacher-item footer button img{
-        margin-right: 1.6rem; 
     }
 }

@@ -4,6 +4,7 @@ import InputBlock from '../../components/InputBlock'
 
 import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
+import Button from '../../components/Button'
 
 export default function TeacherForm() {
     return (
@@ -35,7 +36,8 @@ export default function TeacherForm() {
                     Importante! <br />
                     Preencha todos os dados
                     </p>
-                    <button type="button">Salvar cadastro</button>
+
+                    <Button title="Salvar cadastro" />
                 </footer>
             </main>
         </div >
