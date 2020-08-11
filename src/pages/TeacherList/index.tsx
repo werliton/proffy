@@ -9,9 +9,9 @@ export default function TeacherList() {
         <div id="page-teacher-list" className="container">
             <PageHeader title="Estes são os proffys disponíveis.">
                 <form action="" id="search-teachers">
-                    <InputBlock title="Matéria" id="subject"/>
-                    <InputBlock title="Dia da semana" id="weekday"/>
-                    <InputBlock title="Horário" id="hour"/>
+                    <InputBlock label="Matéria" id="subject"/>
+                    <InputBlock label="Dia da semana" id="weekday"/>
+                    <InputBlock type="time" label="Horário" id="hour"/>
                 </form>
             </PageHeader>
 
