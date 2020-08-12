@@ -5,6 +5,7 @@ import InputBlock from '../../components/InputBlock'
 import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import Button from '../../components/Button'
+import TextAreaBlock from '../../components/TextareaBlock'
 
 export default function TeacherForm() {
     return (
@@ -21,6 +22,7 @@ export default function TeacherForm() {
                     <InputBlock id="name" label="Nome completo" />
                     <InputBlock id="avatar" label="Avatar" />
                     <InputBlock id="whatsapp" label="whatsApp" />
+                    <TextAreaBlock label="Biografia" id="bio" />
                 </fieldset>
 
                 <fieldset>
