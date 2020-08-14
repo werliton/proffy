@@ -7,14 +7,8 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 import Button from '../../components/Button'
 import TextAreaBlock from '../../components/TextareaBlock'
 import SelectBlock from '../../components/Select'
+import { subjects, week_day } from '../../utils/constantes'
 
-const subjects = [
-    { value: 'Artes', label: 'Artes'},
-    { value: 'Biologia', label: 'Biologia'},
-    { value: 'Matematica', label: 'Matematica'},
-    { value: 'Fisica', label: 'Fisica'},
-    { value: 'História', label: 'História'}
-]
 
 export default function TeacherForm() {
     return (
@@ -43,6 +37,27 @@ export default function TeacherForm() {
                         options={subjects}
                     />
                     <InputBlock id="cost" label="Custo da hora aula" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        Horários disponíveis
+
+                        <button type="button">
+                            + Novo horário
+                        </button>
+                    </legend>
+
+                    <div className="schedule-item">
+                        <SelectBlock
+                            id="week_day"
+                            label="Dia da semana"
+                            options={week_day}
+                        />
+                        <InputBlock id="from" label="Das" type="time" />
+                        <InputBlock id="to" label="Até" type="time"/>
+                    </div>
+
                 </fieldset>
 
                 <footer>
