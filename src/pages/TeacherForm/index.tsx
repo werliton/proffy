@@ -10,8 +10,10 @@ import SelectBlock from '../../components/Select'
 import { subjects } from '../../utils/constantes'
 import ScheduleItem from './ScheduleItem'
 import api from '../../services/api'
+import { useHistory } from 'react-router-dom'
 
 export default function TeacherForm() {
+    const history = useHistory()
 
     const [scheduleItems, setScheduleItems] = useState([
         { week_day: 0, from: '', to: '' }]
@@ -36,7 +38,10 @@ export default function TeacherForm() {
         api.post('classes', {
             name, avatar, bio, whatsapp, subject, cost:Number(cost), schedule:scheduleItems
         })
-        .then(() => alert('Cadastro realizado com sucesso'))
+        .then(() => {
+            alert('Cadastro realizado com sucesso')
+            history.push('/')
+        })
         .catch(() => alert('Erro no cadastro'))
     }
 
