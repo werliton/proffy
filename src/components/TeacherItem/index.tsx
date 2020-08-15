@@ -3,6 +3,7 @@ import React from 'react'
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 import './styles.css'
 import Button from '../Button';
+import { useHistory } from 'react-router-dom';
 
 interface TeacherItemProps {
     listTeachers: Array<{
@@ -16,6 +17,7 @@ interface TeacherItemProps {
 }
 
 export default function TeacherItem({ listTeachers }: TeacherItemProps) {
+    const history = useHistory()
     return (
         <main>
             {
@@ -36,9 +38,11 @@ export default function TeacherItem({ listTeachers }: TeacherItemProps) {
                                 Preço/hora
                             <strong>R$ {item.cost},00</strong>
                             </p>
-                            <Button title="Entrar em contato">
-                                <img src={whatsappIcon} alt="whatsapp" />
-                            </Button>
+                            {/* <Button title="Entrar em contato"> */}
+                                <a href="https://wa.me/98992414137">
+                                Entrar em contato <img src={whatsappIcon} alt="whatsapp" />
+                                </a>
+                            {/* </Button> */}
                         </footer>
                     </article>
 

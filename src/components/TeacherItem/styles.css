@@ -50,6 +50,24 @@
     align-items: center;
     justify-content: space-between;
 }
+.teacher-item a {
+    width: 20rem;
+    height: 5.6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.teacher-item a:hover {
+    background: var(--color-secundary-dark);
+}
 
 .teacher-item footer p strong{
     color: var(--color-primary);
