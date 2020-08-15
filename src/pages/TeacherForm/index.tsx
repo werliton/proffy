@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FormEvent } from 'react'
 import PageHeader from '../../components/PageHeader'
 import InputBlock from '../../components/InputBlock'
 
@@ -15,11 +15,37 @@ export default function TeacherForm() {
     const [scheduleItems, setScheduleItems] = useState([
         { week_day: 0, from: '', to: '' }]
     )
+    const [name, setName] = useState('')
+    const [avatar, setAvatar] = useState('')
+    const [whatsapp, setWhatsApp] = useState('')
+    const [bio, setBio] = useState('')
+    const [subject, setSubject] = useState('')
+    const [cost, setCost] = useState('')
+
     function addNewScheduleItems() {
-            setScheduleItems([
-                ...scheduleItems,
-                { week_day: 0, from: '', to: '' }
-            ])
+        setScheduleItems([
+            ...scheduleItems,
+            { week_day: 0, from: '', to: '' }
+        ])
+    }
+
+    function handleSubmit(e: FormEvent) {
+        e.preventDefault()
+
+        console.log({
+            name, avatar, bio, subject, scheduleItems
+        });
+    }
+
+    function setScheduleItemValue(position: number, field: string, value: string) {
+        const newArray = scheduleItems.map((item, index) => {
+            if (index === position) {
+                return { ...item, [field]: value }
+            }
+            return item
+        })
+        
+        setScheduleItems(newArray)
     }
 
     return (
@@ -30,48 +56,57 @@ export default function TeacherForm() {
             />
 
             <main>
-                <fieldset>
-                    <legend>Seus dados</legend>
+                <form onSubmit={handleSubmit}>
+                    <fieldset>
+                        <legend>Seus dados</legend>
 
-                    <InputBlock id="name" label="Nome completo" />
-                    <InputBlock id="avatar" label="Avatar" />
-                    <InputBlock id="whatsapp" label="whatsApp" />
-                    <TextAreaBlock label="Biografia" id="bio" />
-                </fieldset>
+                        <InputBlock id="name" label="Nome completo" value={name} onChange={e => setName(e.target.value)} />
+                        <InputBlock id="avatar" label="Avatar" value={avatar} onChange={e => setAvatar(e.target.value)} />
+                        <InputBlock id="whatsapp" label="whatsApp" value={whatsapp} onChange={e => setWhatsApp(e.target.value)} />
+                        <TextAreaBlock label="Biografia" id="bio" value={bio} onChange={e => setBio(e.target.value)} />
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Sobre a aula</legend>
+                    <fieldset>
+                        <legend>Sobre a aula</legend>
 
-                    <SelectBlock
-                        id="subject"
-                        label="Matéria"
-                        options={subjects}
-                    />
-                    <InputBlock id="cost" label="Custo da hora aula" />
-                </fieldset>
+                        <SelectBlock
+                            id="subject"
+                            label="Matéria"
+                            options={subjects}
+                            value={subject}
+                            onChange={e => setSubject(e.target.value)}
+                        />
+                        <InputBlock id="cost" label="Custo da hora aula" value={cost} onChange={e => setCost(e.target.value)} />
+                    </fieldset>
 
-                <fieldset>
-                    <legend>
-                        Horários disponíveis
+                    <fieldset>
+                        <legend>
+                            Horários disponíveis
 
                         <button type="button" onClick={addNewScheduleItems}>
-                            + Novo horário
+                                + Novo horário
                         </button>
-                    </legend>
-                    {scheduleItems.map((item, index) => <ScheduleItem key={index} />)}
+                        </legend>
+
+                        {
+                            scheduleItems.map((item, index) => <ScheduleItem key={index}
+                                setScheduleItemValue={setScheduleItemValue}
+                                index={index}
+                            />)}
 
 
-                </fieldset>
+                    </fieldset>
 
-                <footer>
-                    <p>
-                        <img src={warningIcon} alt="Aviso" />
+                    <footer>
+                        <p>
+                            <img src={warningIcon} alt="Aviso" />
                     Importante! <br />
                     Preencha todos os dados
                     </p>
 
-                    <Button title="Salvar cadastro" />
-                </footer>
+                        <Button title="Salvar cadastro" type="submit" />
+                    </footer>
+                </form>
             </main>
         </div >
     )

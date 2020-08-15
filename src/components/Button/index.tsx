@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: React.FC<ButtonProps> = ({ children, title, ...rest }) => {
     return (
-        <button type="button">
+        <button>
             {children}
             {title}
         </button>
