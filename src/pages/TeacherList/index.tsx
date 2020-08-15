@@ -54,8 +54,9 @@ export default function TeacherList() {
                         <Button name="Buscar" title="Buscar" type="submit"/>
                 </form>
             </PageHeader>
-
-            <TeacherItem listTeachers={listTeachers}/>
+            {
+                listTeachers.map((item, index)=> <TeacherItem key={index} teacher={item}/>)
+            }
         </div>
     )
 }
