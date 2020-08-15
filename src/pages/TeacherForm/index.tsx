@@ -9,6 +9,7 @@ import TextAreaBlock from '../../components/TextareaBlock'
 import SelectBlock from '../../components/Select'
 import { subjects } from '../../utils/constantes'
 import ScheduleItem from './ScheduleItem'
+import api from '../../services/api'
 
 export default function TeacherForm() {
 
@@ -32,9 +33,11 @@ export default function TeacherForm() {
     function handleSubmit(e: FormEvent) {
         e.preventDefault()
 
-        console.log({
-            name, avatar, bio, subject, scheduleItems
-        });
+        api.post('classes', {
+            name, avatar, bio, whatsapp, subject, cost:Number(cost), schedule:scheduleItems
+        })
+        .then(() => alert('Cadastro realizado com sucesso'))
+        .catch(() => alert('Erro no cadastro'))
     }
 
     function setScheduleItemValue(position: number, field: string, value: string) {
@@ -89,9 +92,11 @@ export default function TeacherForm() {
                         </legend>
 
                         {
-                            scheduleItems.map((item, index) => <ScheduleItem key={index}
+                            scheduleItems.map((item, index) => <ScheduleItem 
+                                key={index}
                                 setScheduleItemValue={setScheduleItemValue}
                                 index={index}
+                                item={item}
                             />)}
 
 
