@@ -6,9 +6,9 @@ import { RectButton } from 'react-native-gesture-handler'
 import styles from './styles'
 
 import landingImg from '../../assets/images/landing.png'
-import studyIcon from '../../assets/images/icon/study.png'
-import giveClassesIcon from '../../assets/images/icon/give-classes.png'
-import heartIcon from '../../assets/images/icon/heartIcon.png'
+import studyIcon from '../../assets/images/icons/study.png'
+import giveClassesIcon from '../../assets/images/icons/give-classes.png'
+import heartIcon from '../../assets/images/icons/heart.png'
 
 export default function Landing() {
     const navigation = useNavigation()
@@ -41,7 +41,7 @@ export default function Landing() {
                 onPress={handleNavigateToGiveClassesPage}
                 >
                     <Image source={giveClassesIcon}/>
-                    <Text>Dar aula</Text>
+                    <Text style={styles.buttonText}>Dar aula</Text>
                 </RectButton>
             </View>
 
