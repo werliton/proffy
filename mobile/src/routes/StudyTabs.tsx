@@ -71,22 +71,6 @@ function StudyTabs() {
                     }
                 }}
             />
-            <Screen
-                name="Study"
-                component={AppStack}
-                options={{
-                    tabBarLabel: 'Proffys',
-                    tabBarIcon: ({ color, size }) => {
-                        return (
-                            <Ionicons
-                                color={color}
-                                name="ios-easel"
-                                size={size}
-                            />
-                        )
-                    }
-                }}
-            />
         </Navigator>
     )
 }
