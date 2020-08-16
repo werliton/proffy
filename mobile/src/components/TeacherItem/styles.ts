@@ -74,6 +74,9 @@ const styles = StyleSheet.create({
         width:56,
         height:56
     },
+    favorited:{
+        backgroundColor: '#e33d3d'
+    },
     buttonWhatsapp: {
         backgroundColor: '#04d361',
         flexDirection: "row",

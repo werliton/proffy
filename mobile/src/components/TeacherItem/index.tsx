@@ -38,10 +38,9 @@ const TeacherItem = () => {
                 </Text>
 
                 <View style={styles.buttonsContainer}>
-                    <RectButton style={styles.buttonFavorite}>
-                        <Image
-                            source={heartIcon}
-                        />
+                    <RectButton style={[styles.buttonFavorite, styles.favorited]}>
+                        {/* <Image source={heartIcon} /> */}
+                        <Image source={unfavoriteIcon} />
                     </RectButton>
                     <RectButton style={styles.buttonWhatsapp}>
                         <Image
