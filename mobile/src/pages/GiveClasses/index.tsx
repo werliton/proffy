@@ -16,7 +16,7 @@ function GiveClasses() {
         <View style={styles.container}>
             <ImageBackground resizeMode="contain" source={giveClassesBgImage} style={styles.content}>
                 <Text style={styles.title}>
-                    Quer ser um Proffy
+                    Quer ser um Proffy?
                 </Text>
                 <Text style={styles.description}>
                     Para começar, você precisa se cadastrar como professor na nossa plataforma web.

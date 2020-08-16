@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#9871f5'
     },
     buttonSecondary:{
-        backgroundColor: '#84d361'
+        backgroundColor: '#04d361'
     },
     buttonText:{
         fontFamily: 'Archivo_700Bold',
