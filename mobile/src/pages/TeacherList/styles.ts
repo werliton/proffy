@@ -11,6 +11,25 @@ const styles = StyleSheet.create({
     searchForm:{
         marginBottom: 8
     },
+    textFilters:{
+        color: '#d4c2ff',
+        fontFamily: 'Poppins_400Regular',
+        fontSize: 18,
+        marginBottom: 24
+    },
+    buttonFilter:{
+        backgroundColor: '#04d361',
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 8,
+        height: 56
+    },
+    textButtonFilter:{
+        color: '#fff',
+        fontSize: 16,
+        fontFamily: 'Archivo_700Bold'
+    },
     label:{
         color: '#d4c2ff',
         fontFamily: 'Poppins_400Regular'
