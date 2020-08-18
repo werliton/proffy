@@ -29,13 +29,17 @@ export default function TeacherList() {
         })
     }
     
+    useEffect(() => {
+        loadFavorites()
+    }, [favorites])
+
     function handleFilter() {
         setIsFilterVisible(!isFilterVisible)
     }
 
     async function handleFiltersSubmit() {
         loadFavorites()
-        
+
         try {
             const response = await api.get('classes',{
                 params:{
