@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text } from 'react-native'
+import { ScrollView, TextInput, BorderlessButton, RectButton } from 'react-native-gesture-handler'
+import AsyncStorage from '@react-native-community/async-storage'
+
 import styles from './styles'
 import PageHeader from '../../components/PageHeader'
 import TeacherItem from '../../components/TeacherItem'
 import { Feather } from '@expo/vector-icons'
-import { ScrollView, TextInput, BorderlessButton, RectButton } from 'react-native-gesture-handler'
 import api from '../../services/api'
+import { Teacher } from '../../components/TeacherItem/index'
 
 export default function TeacherList() {
     const [isFilterVisible, setIsFilterVisible] = useState(false)
@@ -13,12 +16,26 @@ export default function TeacherList() {
     const [week_day, setWeek_day] = useState('')
     const [time, setTime] = useState('')
     const [listTeachers, setListTeachers] = useState([])
+    const [favorites, setFavorites] = useState<number[]>([])
+
+    function loadFavorites() {
+        AsyncStorage.getItem('favorites')
+        .then(response => {
+           if (response) {
+               const favoritedTeachers = JSON.parse(response)
+               const favoritedTeachersIds = favoritedTeachers.map((item:Teacher) => item.id)
+               setFavorites(favoritedTeachersIds)
+           }     
+        })
+    }
     
     function handleFilter() {
         setIsFilterVisible(!isFilterVisible)
     }
 
     async function handleFiltersSubmit() {
+        loadFavorites()
+        
         try {
             const response = await api.get('classes',{
                 params:{
@@ -93,7 +110,12 @@ export default function TeacherList() {
                 }}
             >
                 {
-                    listTeachers && listTeachers.map((item, index) => <TeacherItem {...item} key={index}/>)
+                    listTeachers && listTeachers.map((item:Teacher, index) => 
+                    <TeacherItem  
+                        key={index}
+                        teacher={item}
+                        favorited={favorites.includes(item.id)}
+                    />)
                 }
                 
             </ScrollView>
