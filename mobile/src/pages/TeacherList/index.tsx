@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { View, Text } from 'react-native'
 import { ScrollView, TextInput, BorderlessButton, RectButton } from 'react-native-gesture-handler'
 import AsyncStorage from '@react-native-community/async-storage'
+import { Feather } from '@expo/vector-icons'
+import { useFocusEffect } from '@react-navigation/native'
 
-import styles from './styles'
 import PageHeader from '../../components/PageHeader'
 import TeacherItem from '../../components/TeacherItem'
-import { Feather } from '@expo/vector-icons'
-import api from '../../services/api'
 import { Teacher } from '../../components/TeacherItem/index'
+import api from '../../services/api'
+
+import styles from './styles'
 
 export default function TeacherList() {
     const [isFilterVisible, setIsFilterVisible] = useState(false)
@@ -29,9 +31,11 @@ export default function TeacherList() {
         })
     }
     
-    useEffect(() => {
-        loadFavorites()
-    }, [favorites])
+    useFocusEffect(
+        React.useCallback(() => {
+          loadFavorites();
+        }, [favorites])
+      )
 
     function handleFilter() {
         setIsFilterVisible(!isFilterVisible)
