@@ -1,9 +1,13 @@
 import path from 'path'
+import 'dotenv/config'
 
 module.exports = {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-        filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite')
+        host: 'localhost',
+        user: 'postgres',
+        password: 'docker',
+        database: 'proffy'
     },
     migrations: {
         directory: path.resolve(__dirname, 'src', 'database', 'migrations')
