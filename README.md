@@ -26,7 +26,7 @@ Plataforma cujo objetivo é <strong>conectar quem quer estudar com quem quer dar
  <a href="#autor">Autor</a>
 </p>
 <h4 align="center"> 
-	🚧  Proffy 🚀 Concluido...  🚧
+	Proffy - Concluido.
 </h4>
 
 ### Features
@@ -59,8 +59,7 @@ Plataforma cujo objetivo é <strong>conectar quem quer estudar com quem quer dar
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 
 ### 🎲 1- Rodando o Back End (servidor)
 
@@ -103,7 +102,7 @@ $ npm start
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
-Nesse terceiro passo você precisará ter instalado no seu celular
+Nesse terceiro passo você precisará ter instalado no seu celular o [Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR).
 
 ### 🎲 3 - Rodando o App (mobile)
 
@@ -125,7 +124,7 @@ $ expo start
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
-### 🛠 Tecnologias
+### Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -149,7 +148,9 @@ Licensed under the [MIT License](./LICENSE).
  <sub><b>Werliton Silva</b></sub></a> <a href="hhttps://www.linkedin.com/in/werliton-carlos-206b5b70/" title="Rocketseat">🚀</a>
 
 
-Feito com ❤️ por Werliton Silva 👋🏽 Entre em contato!
+Feito por Werliton Silva.
+
+Contato-me!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Werliton-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/werlitonsilva/)](https://www.linkedin.com/in/werliton-carlos-206b5b70/) 
 [![Gmail Badge](https://img.shields.io/badge/-werlitoncarlos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:werlitoncarlos@gmail.com)](mailto:werlitoncarlos@gmail.com)
