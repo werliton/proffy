@@ -91,7 +91,7 @@ $ git clone <https://github.com/werliton/proffy>
 # Acesse a pasta do projeto no terminal/cmd
 $ cd proffy
 
-# Vá para a pasta server
+# Vá para a pasta frontend
 $ cd fronted
 
 # Instale as dependências
@@ -114,7 +114,7 @@ $ git clone <https://github.com/werliton/proffy>
 # Acesse a pasta do projeto no terminal/cmd
 $ cd proffy
 
-# Vá para a pasta server
+# Vá para a pasta mobile
 $ cd mobile
 
 # Instale as dependências
@@ -134,6 +134,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Cloud Firestore](https://firebase.google.com/docs/firestore)
 
 ### License
 
@@ -142,10 +143,10 @@ Licensed under the [MIT License](./LICENSE).
 ### Autor
 ---
 
-<a href="https://blog.rocketseat.com.br/author/thiago/">
+<a href="https://www.linkedin.com/in/werliton-carlos-206b5b70/">
  <img style="border-radius: 50%;" src="https://avatars1.githubusercontent.com/u/4674324?s=460&u=cb676169391ac204b824569fd7465fa36488624d&v=4" width="100px;" alt=""/>
  <br />
- <sub><b>Werliton Silva</b></sub></a> <a href="https://blog.rocketseat.com.br/author/thiago//" title="Rocketseat">🚀</a>
+ <sub><b>Werliton Silva</b></sub></a> <a href="hhttps://www.linkedin.com/in/werliton-carlos-206b5b70/" title="Rocketseat">🚀</a>
 
 
 Feito com ❤️ por Werliton Silva 👋🏽 Entre em contato!
