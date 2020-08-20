@@ -11,7 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Configuração do PostgreSQL
+- Arquivo de configuração de ambiente
 
 ### Removed
 
 - Remoção do sqlite3
+
+### Changed
+
+- Alteração de configuração a base de dados

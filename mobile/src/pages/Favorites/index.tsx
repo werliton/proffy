@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { View, RefreshControl } from 'react-native'
 import { AppLoading } from 'expo'
 
@@ -8,6 +8,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import TeacherItem, { Teacher } from '../../components/TeacherItem'
 import AsyncStorage from '@react-native-community/async-storage'
 import { useFocusEffect } from '@react-navigation/native'
+import FirestoreClient from '../../services/firestoreClient'
+import getDocument from '../../services/firestoreClient'
 
 export default function Favorites() {
 
@@ -18,18 +20,19 @@ export default function Favorites() {
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
         loadFavorites()
-            .then(() => setRefreshing(false))
+           .then(() => setRefreshing(false))
 
     }, []);
 
-    const loadFavorites = async () => {
-        const response = await AsyncStorage
-            .getItem('favorites')
-        if (response) {
-            setFavorites(JSON.parse(response))
-        }
-        return Promise.resolve(response)
-    }
+    const loadFavorites = useCallback(
+        async () => {
+           
+                const data =  await getDocument("classes")        
+                setFavorites(data)
+       
+        },
+        [],
+    )
 
     useFocusEffect(
         React.useCallback(() => {
