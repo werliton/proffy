@@ -147,10 +147,5 @@ Licensed under the [MIT License](./LICENSE).
  <br />
  <sub><b>Werliton Silva</b></sub></a> <a href="hhttps://www.linkedin.com/in/werliton-carlos-206b5b70/" title="Rocketseat">🚀</a>
 
-
-Feito por Werliton Silva.
-
-Contato-me!
-
 [![Linkedin Badge](https://img.shields.io/badge/-Werliton-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/werlitonsilva/)](https://www.linkedin.com/in/werliton-carlos-206b5b70/) 
 [![Gmail Badge](https://img.shields.io/badge/-werlitoncarlos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:werlitoncarlos@gmail.com)](mailto:werlitoncarlos@gmail.com)
